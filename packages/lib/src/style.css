@@ -29,7 +29,7 @@
 .contactsBox_searchInput {
     display: block;
     width: 100%;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     line-height: rem(30);
     padding: rem(20) rem(20) rem(20) rem(70);
     font-size: 14px;
@@ -91,7 +91,7 @@
 
 /*contactsBox keyBar*/
 .contactsBox_keyBar {
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     position: absolute;
     padding: rem(20) rem(16) rem(20) 0;
     top: 50%;

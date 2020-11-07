@@ -52,6 +52,9 @@ targetSelect.addEventListener('click', () => {
         },
         onSelect(value) {
             console.log(`当前选中：[${value}]`);
+        },
+        onScrollToAnchorPoint(target) {
+            console.log(target);
         }
     });
 

@@ -244,6 +244,7 @@ export default class Contacts {
 
         // resize
         this.$$resizeEvent = throttle(() => {
+            if (this.isDestroy) return;
             this.updatePosition();
             this.scrollChange();
         }, 250);
@@ -255,6 +256,7 @@ export default class Contacts {
         // touchMove
         if (this.options.navModel === 'touchmove') {
             this.$$touchEvent = throttle((event) => {
+                if (this.isDestroy) return;
                 event.preventDefault();
                 const target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
                 if (target && target.classList && target.classList.contains('js_keyBarItem')) {
@@ -280,9 +282,12 @@ export default class Contacts {
         const keyBarDom = this.options.targetDom.querySelector('.js_contactsBoxKeyBar');
         keyBarDom.removeEventListener('touchstart', this.$$touchEvent, false);
         keyBarDom.removeEventListener('touchmove', this.$$touchEvent, false);
+        window.removeEventListener('resize', this.$$resizeEvent, false);
+
         this.$$clickEvent = null;
         this.$$scrollEvent = null;
         this.$$touchEvent = null;
+        this.$$resizeEvent = null;
 
         // 还原dom节点
         if (this.options.selectDom) this.options.selectDom.classList.remove(hideClass);
