@@ -4,7 +4,7 @@
     "version": "0.0.1",
     "command": {
         "version": {
-            "allowBranch": "master",
+            "allowBranch": "main",
             "exact": true,
             "ignoreChanges": [
                 "**/*.md"
