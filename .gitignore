@@ -1,9 +1,6 @@
 .DS_Store
 node_modules
-
-/packages/polyfill/node_modules
-/packages/polyfill/stats.html
-
+dist
 
 # local env files
 .env.local
