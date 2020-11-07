@@ -4,7 +4,7 @@ module.exports = {
             '@lljj/babel-preset-app',
             {
                 useBuiltIns: false,
-                regenerator: true,
+                regenerator: false,
                 helpers: true
             }
         ]

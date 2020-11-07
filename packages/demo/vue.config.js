@@ -60,7 +60,7 @@ module.exports = {
         };
         config.resolve.alias = {
             ...config.resolve.alias,
-            'js-contacts': path.resolve(__dirname, '../lib/src/index.js')
+            // 'js-contacts': path.resolve(__dirname, '../lib/src/index.js')
         };
     },
 

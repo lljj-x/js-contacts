@@ -1,9 +1,10 @@
 module.exports = {
     root: true,
     env: {
-        browser: true
+        browser: true,
     },
     extends: [
         '@lljj/eslint-config'
-    ]
+    ],
+    parser: 'babel-eslint'
 };

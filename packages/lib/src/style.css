@@ -1,0 +1,142 @@
+.xx-disHide {
+    display: none !important;
+}
+.contactsBox {
+    position: relative;
+    background: #FFFFFF;
+    .c-search-icon {
+        display: inline-block;
+        width: rem(50);
+        height: rem(50);
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAwCAMAAABpN6nPAAAAdVBMVEUAAAC6urqsrKy6urq7u7u7u7u6urq7u7u7u7u6urq6urq8vLy8vLy6urq6urq7u7u7u7u6urq6urq7u7u7u7u7u7u9vb26urq6urq7u7u6urq6urq6urq6urq7u7u8vLy7u7u6urq7u7u6urq7u7u9vb26uro15wGBAAAAJnRSTlMA7QX4rH0WEGz72VQ38+fRlYxpRz4yB8axc52bh3lhWxzhoU4pH65UEgAAAAEaSURBVEjH7ZXLGoIgEIUBJbyVqZl2v/P+jxhjLFSEYr6WnuWBH4YZGMisP2vD24TGAc3DXf0b8SpWsqfkJL4ii3UsR1ryrZtJqZxQkrmYo+xE7+dasO0ii8KgM4KzndlL0K3shSP4Z++djSlgNOZs6IpDR1n2SmFstTEHLkuIsJ7MG8RBn1NDFZwsZ8TUGpazpOkilSLTvwau4+4hcnMrDvVg1prDsVLDzpVb9g0z+NBYCrIt7FAGWTISpMyGOAS5vY68UnkHF9SoCeManpR3dEGtmvBAQajwUInApBxVXNQ1Ql1YzNNAPULMc0c0lob5tjBQyDybpab82nKhKb8PINKU11djo9yfmqY48ZGmWoKgUuKrqqjIrIHeA6M7aFBCwYoAAAAASUVORK5CYII=");
+        background-size: rem(50);
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: top;
+    }
+}
+
+/*search box*/
+.contactsBox_search {
+    position: relative;
+    padding: rem(20);
+}
+.contactsBox_searchIcon {
+    position: absolute;
+    left: rem(30);
+    top: rem(28);
+}
+.contactsBox_searchInput {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: rem(30);
+    padding: rem(20) rem(20) rem(20) rem(70);
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background: #F2F2F2;
+    border-radius: 4px;
+    transition: box-shadow 0.4s ease;
+    &::placeholder {
+        color: #BABABA;
+    }
+    &:focus {
+        box-shadow: 0 0 rem(6) 0 rgba(0, 0, 0, 0.3);
+    }
+}
+
+/*list box*/
+.contactsBox_content {
+    position: relative;
+    height: 100%;
+    @nest .hasSearchInput & {
+        height: auto;
+    }
+}
+.contactsBox_listBox {
+    overflow: auto;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+}
+.contactsBox_groupTitle {
+    margin: 0;
+    position: sticky;
+    top: 0;
+    padding: 0 rem(20);
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    line-height: rem(80);
+    background: #E5E5E5;
+}
+.contactsBox_groupItem {
+    padding: 0 rem(60) 0 rem(20);
+    &:active  {
+        background-color: #efefef;
+    }
+    &.xx-active {
+        .contactsBox_groupLabel {
+            color: #FF8A00;
+        }
+    }
+    .contactsBox_groupLabel {
+        display: block;
+        font-size: 14px;
+        color: #000000;
+        line-height: rem(96);
+        border-bottom: 0.5px solid #EEEEEE;
+    }
+}
+
+/*contactsBox keyBar*/
+.contactsBox_keyBar {
+    box-sizing: border-box;
+    position: absolute;
+    padding: rem(20) rem(16) rem(20) 0;
+    top: 50%;
+    transform: translate(0 ,-50%);
+    right: 0;
+    color: #007AFF;
+    max-height: 100%;
+    &>span {
+        display: block;
+        text-align: center;
+        width: rem(36);
+        line-height: rem(36);
+        border-radius: 50%;
+        font-size: rem(24);
+        &.xx-active {
+            background: #007AFF;
+            color: #FFFFFF;
+        }
+    }
+    &.contactsBox_keyBar-scroll {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    &.contactsBox_keyBar-touchmove {
+        &>span {
+            width: 1.8vh;
+            line-height: 1.8vh;
+            padding: rem(8);
+        }
+    }
+}
+
+.contactsBox_indicator {
+    position: absolute;
+    width: rem(88);
+    height: rem(88);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    line-height: rem(88);
+    background-color: #666666;
+    border-radius: rem(16);
+    color: #fff;
+    font-size: 17px;
+}
+
