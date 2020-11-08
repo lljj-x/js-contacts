@@ -154,7 +154,7 @@ export default class Contacts {
         this.handleIndicator(target);
 
         // 通过dom 计算对应高度
-        // scrollDom.scrollTop = document.getElementById(target.dataset.target).offsetTop;
+        // this.options.scrollDom.scrollTop = document.getElementById(target.dataset.target).offsetTop;
 
         // 通过缓存的高度做计算
         const anchorPoint = target.dataset.target;
@@ -182,20 +182,26 @@ export default class Contacts {
     updatePosition() {
         if (!this.options.allList.length > 0) return;
 
-        // 直接根据数据条数来计算了，不去递归dom节点
-        const titleHeight = this.options.targetDom.querySelector('.js_contactsBoxGroupTitle').offsetHeight;
-        const itemHeight = this.options.targetDom.querySelector('.js_contactsBoxGroupItem').offsetHeight;
-
-        // 高度不变 不需要重新计算
-        if (this.options.titleHeight === titleHeight && this.options.itemHeight === itemHeight) return;
-
-        this.options.titleHeight = titleHeight;
-        this.options.itemHeight = itemHeight;
-
-        this.options.groupedList.forEach((curItem, curIndex) => {
-            const prevItem = this.options.groupedList[curIndex - 1];
-            curItem.positionTop = prevItem ? (titleHeight + (prevItem.value.length) * itemHeight + prevItem.positionTop) : 0;
+        const groupDomList = querySelectorList('.js_contactsBoxGroup', this.options.targetDom);
+        groupDomList.forEach((item, index) => {
+            this.options.groupedList[index].positionTop = item.offsetTop;
         });
+
+
+        // 直接根据数据条数来计算了，不去递归dom节点
+        // const titleHeight = this.options.targetDom.querySelector('.js_contactsBoxGroupTitle').getBoundingClientRect().height;
+        // const itemHeight = this.options.targetDom.querySelector('.js_contactsBoxGroupItem').getBoundingClientRect().height;
+        //
+        // // 高度不变 不需要重新计算
+        // if (this.options.titleHeight === titleHeight && this.options.itemHeight === itemHeight) return;
+        //
+        // this.options.titleHeight = titleHeight;
+        // this.options.itemHeight = itemHeight;
+        //
+        // this.options.groupedList.forEach((curItem, curIndex) => {
+        //     const prevItem = this.options.groupedList[curIndex - 1];
+        //     curItem.positionTop = prevItem ? (titleHeight + (prevItem.value.length) * itemHeight + prevItem.positionTop) : 0;
+        // });
     }
 
     getCurrentSection(scrollTop) {
@@ -221,12 +227,6 @@ export default class Contacts {
         // 点击事件委托
         this.$$clickEvent = (event) => {
             getRealCurrentTarget(event.currentTarget, event.target, (t) => {
-                // 点击右边栏关键词
-                if (t.className && ~t.className.indexOf('js_keyBarItem')) {
-                    this.handleAnchorPoint(t);
-                    return true;
-                }
-
                 // 选中数据
                 if (t.className && ~t.className.indexOf('contactsBox_groupItem')) {
                     this.handleSelect(t);
@@ -237,6 +237,20 @@ export default class Contacts {
             });
         };
         targetDom.addEventListener('click', this.$$clickEvent, false);
+
+        // touchstart event 委托
+        this.$$touchstartEvent = (event) => {
+            getRealCurrentTarget(event.currentTarget, event.target, (t) => {
+                // 点击右边栏关键词
+                if (t.className && ~t.className.indexOf('js_keyBarItem')) {
+                    this.handleAnchorPoint(t);
+                    return true;
+                }
+
+                return false;
+            });
+        };
+        targetDom.addEventListener('touchstart', this.$$touchstartEvent, false);
 
         // 滚动定位
         this.$$scrollEvent = throttle(this.scrollChange.bind(this), 250);
@@ -255,17 +269,17 @@ export default class Contacts {
 
         // touchMove
         if (this.options.navModel === 'touchmove') {
-            this.$$touchEvent = throttle((event) => {
+            this.$$navTouchMoveEvent = throttle((event) => {
                 if (this.isDestroy) return;
                 event.preventDefault();
                 const target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
                 if (target && target.classList && target.classList.contains('js_keyBarItem')) {
                     this.handleAnchorPoint(target);
                 }
-            }, 100);
+            }, 50);
             const keyBarDom = this.options.targetDom.querySelector('.js_contactsBoxKeyBar');
-            keyBarDom.addEventListener('touchstart', this.$$touchEvent, false);
-            keyBarDom.addEventListener('touchmove', this.$$touchEvent, false);
+            keyBarDom.addEventListener('touchstart', this.$$navTouchMoveEvent, false);
+            keyBarDom.addEventListener('touchmove', this.$$navTouchMoveEvent, false);
         }
     }
 
@@ -278,15 +292,17 @@ export default class Contacts {
 
         // 释放事件
         this.options.targetDom.removeEventListener('click', this.$$clickEvent, false);
+        this.options.targetDom.removeEventListener('click', this.$$touchstartEvent, false);
         this.options.scrollDom.removeEventListener('scroll', this.$$scrollEvent, false);
         const keyBarDom = this.options.targetDom.querySelector('.js_contactsBoxKeyBar');
-        keyBarDom.removeEventListener('touchstart', this.$$touchEvent, false);
-        keyBarDom.removeEventListener('touchmove', this.$$touchEvent, false);
+        keyBarDom.removeEventListener('touchstart', this.$$navTouchMoveEvent, false);
+        keyBarDom.removeEventListener('touchmove', this.$$navTouchMoveEvent, false);
         window.removeEventListener('resize', this.$$resizeEvent, false);
 
         this.$$clickEvent = null;
+        this.$$touchstartEvent = null;
         this.$$scrollEvent = null;
-        this.$$touchEvent = null;
+        this.$$navTouchMoveEvent = null;
         this.$$resizeEvent = null;
 
         // 还原dom节点

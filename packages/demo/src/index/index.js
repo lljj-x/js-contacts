@@ -39,7 +39,7 @@ targetSelect.addEventListener('click', () => {
 
     contactsInstance = new Contacts({
         target: '.js_targetSelect', // 需要放置的目标位置
-        containerHeight: '70vh', // 默认 60vh
+        containerHeight: '80vh', // 默认 60vh
         navModel: 'scroll', // 浏览器滚动条
 
         hotLetter: '#',
@@ -80,7 +80,7 @@ document.querySelector('.js_jsonData').addEventListener('click', () => {
 
     contactsInstance = new Contacts({
         target: '.js_targetSelect', // 需要放置的目标位置
-        containerHeight: '85vh', // 默认 60vh
+        containerHeight: '80vh', // 默认 60vh
         navModel: 'touchmove', // touchmove
 
         hotLetter: '#',

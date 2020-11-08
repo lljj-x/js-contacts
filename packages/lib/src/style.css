@@ -93,7 +93,7 @@
 .contactsBox_keyBar {
     box-sizing: border-box !important;
     position: absolute;
-    padding: rem(20) rem(16) rem(20) 0;
+    padding: rem(20) rem(6) rem(20) 0;
     top: 50%;
     transform: translate(0 ,-50%);
     right: 0;
@@ -120,7 +120,7 @@
         &>span {
             width: 1.8vh;
             line-height: 1.8vh;
-            padding: rem(8);
+            padding: rem(4);
         }
     }
 }
