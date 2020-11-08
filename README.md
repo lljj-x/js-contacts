@@ -37,6 +37,10 @@ const instance = new Contacts({
         console.log(`当前选中：[${value}]`);
     }
 });
+
+
+// 需要销毁的时候执行
+instance.destroy();
 ```
 
 ### 运行Demo
@@ -190,10 +194,6 @@ data: {
     }
 }
 ```
-
-
-
-
 
 ## 兼容性
 内部使用 `Object.assign` 等es6 api，需要自行垫片或者通过babel处理

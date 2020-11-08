@@ -182,26 +182,17 @@ export default class Contacts {
     updatePosition() {
         if (!this.options.allList.length > 0) return;
 
+        // 如果滚动容器高度没发生变化  不重新计算
+        const curScrollHeight = this.options.scrollDom.scrollHeight;
+        if (this.options.scrollHeight === curScrollHeight) return;
+
+        this.options.scrollHeight = this.options.targetDom.scrollHeight;
+
+        // 计算各个节点高度
         const groupDomList = querySelectorList('.js_contactsBoxGroup', this.options.targetDom);
         groupDomList.forEach((item, index) => {
             this.options.groupedList[index].positionTop = item.offsetTop;
         });
-
-
-        // 直接根据数据条数来计算了，不去递归dom节点
-        // const titleHeight = this.options.targetDom.querySelector('.js_contactsBoxGroupTitle').getBoundingClientRect().height;
-        // const itemHeight = this.options.targetDom.querySelector('.js_contactsBoxGroupItem').getBoundingClientRect().height;
-        //
-        // // 高度不变 不需要重新计算
-        // if (this.options.titleHeight === titleHeight && this.options.itemHeight === itemHeight) return;
-        //
-        // this.options.titleHeight = titleHeight;
-        // this.options.itemHeight = itemHeight;
-        //
-        // this.options.groupedList.forEach((curItem, curIndex) => {
-        //     const prevItem = this.options.groupedList[curIndex - 1];
-        //     curItem.positionTop = prevItem ? (titleHeight + (prevItem.value.length) * itemHeight + prevItem.positionTop) : 0;
-        // });
     }
 
     getCurrentSection(scrollTop) {
