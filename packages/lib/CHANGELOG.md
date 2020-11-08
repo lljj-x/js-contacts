@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/lljj-x/polyfill/compare/v0.1.0...v0.1.1) (2020-11-08)
+
+
+### Bug Fixes
+
+* **lib:** 修复在真机设备定位不准确问题 ([dab8b93](https://github.com/lljj-x/polyfill/commit/dab8b93871763e52d9e7092204f01e9787e91067))
+
+
+
+
+
 # 0.1.0 (2020-11-07)
 
 
