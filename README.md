@@ -1,10 +1,5 @@
 # js-contacts
 
-## todo
-* 优化快捷条滑动可以在划出区域继续定位
-* 优化在中间元素滚动时，如果使用快捷条要中止中间元素的滚动行为
-* 支持搜索功能
-
 ## 介绍
 
 * [查看演示](http://js-contacts.buhuida.com/)
@@ -62,6 +57,8 @@ Demo文件：https://github.com/lljj-x/js-contacts/blob/main/packages/demo/src/i
         hotLetter: '#',
         hotName: '推荐',
         showSearch: true, // 是否显示搜索
+        searchPlaceholder: '请输入搜索关键词', // 搜索框占位符
+        showNavBar: false, // 是否显示右侧快捷选择条
         curSelect: 'IT',
         indicatorDuration: 2000, // 指示器显示时间
         data: {
@@ -158,6 +155,15 @@ data: {
 ### showSearch
 * 默认：true
 * 是否显示搜索框
+
+### searchPlaceholder
+* 默认：输入搜索词
+* 搜索框占位符
+
+
+### showNavBar
+* 默认：true
+* 是否显示右侧快捷选择条
 
 ### indicatorDuration
 * 默认：`2000`

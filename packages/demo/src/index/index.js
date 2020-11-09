@@ -2,7 +2,7 @@
  * Created by Liu.Jun on 2020/11/5 11:48.
  */
 
-import Contacts from 'js-contacts/src/index';
+import Contacts from 'js-contacts';
 
 import './lib/layer_mobile/layer';
 import './lib/layer_mobile/need/layer.css';
@@ -85,8 +85,8 @@ document.querySelector('.js_jsonData').addEventListener('click', () => {
 
         hotLetter: '#',
         hotName: '推荐',
-        showSearch: false, // 是否显示搜索
         curSelect: 'BR',
+        searchPlaceholder: '请输入搜索关键词',
         indicatorDuration: 1500, // 指示器显示时间
         data: {
             allList,
@@ -96,4 +96,6 @@ document.querySelector('.js_jsonData').addEventListener('click', () => {
             console.log(`当前选中：[${value}]`);
         }
     });
+
+    window.contactsInstance = contactsInstance;
 }, false);

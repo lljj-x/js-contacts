@@ -59,10 +59,13 @@ export function querySelectorList(selector, parent = document) {
 }
 
 // 通过首字母对数据分组 数据分组
-export function groupByLetter(data, id) {
+export function groupByLetter(data, id, searchVal) {
     const tempCache = Object.create(null);
 
     return data.reduce((preVal, curVal) => {
+        // 过滤搜索数据
+        if (searchVal !== '' && !(~curVal.label.toLocaleUpperCase().indexOf(searchVal.toLocaleUpperCase()))) return preVal;
+
         const letter = String((curVal.groupKey || curVal.label)[0]).toLocaleUpperCase();
         if (tempCache[letter] !== undefined) {
             preVal[tempCache[letter]].value.push(curVal);
