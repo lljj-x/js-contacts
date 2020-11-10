@@ -345,7 +345,7 @@ var Contacts = /*#__PURE__*/function () {
       searchPlaceholder: '输入搜索词',
       // 是否显示搜索
       showNavBar: true,
-      // 是否显示搜索
+      // 显示导航条
       navModel: 'scroll',
       // scrollBar / touchmove
       searchVal: '',
@@ -522,7 +522,7 @@ var Contacts = /*#__PURE__*/function () {
         _this2.options.groupedList[index].positionTop = item.offsetTop;
       }); // 计算 touchmoveX
 
-      if (this.options.navModel === 'touchmove') {
+      if (this.options.showNavBar && this.options.navModel === 'touchmove') {
         var barClientRect = this.options.navBarDom.getBoundingClientRect();
         this.options.touchmoveX = barClientRect.left + (barClientRect.width || 6) / 2;
       }

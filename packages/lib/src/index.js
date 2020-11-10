@@ -23,7 +23,7 @@ export default class Contacts {
         containerHeight: '60vh',
         showSearch: true, // 是否显示搜索
         searchPlaceholder: '输入搜索词', // 是否显示搜索
-        showNavBar: true, // 是否显示搜索
+        showNavBar: true, // 显示导航条
         navModel: 'scroll', // scrollBar / touchmove
         searchVal: '', // 搜索框的关键词同步
         curSelect: '', // 当前选中的值
@@ -180,7 +180,7 @@ export default class Contacts {
         });
 
         // 计算 touchmoveX
-        if (this.options.navModel === 'touchmove') {
+        if (this.options.showNavBar && this.options.navModel === 'touchmove') {
             const barClientRect = this.options.navBarDom.getBoundingClientRect();
             this.options.touchmoveX = barClientRect.left + (barClientRect.width || 6) / 2;
         }
