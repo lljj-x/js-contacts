@@ -138,7 +138,7 @@
     }
   }
 
-  var css_248z = ".xx-disHide{display:none!important}.contactsBox{position:relative;background:#fff}.contactsBox .c-search-icon{display:inline-block;width:.6667rem;height:.6667rem;background-image:url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAwCAMAAABpN6nPAAAAdVBMVEUAAAC6urqsrKy6urq7u7u7u7u6urq7u7u7u7u6urq6urq8vLy8vLy6urq6urq7u7u7u7u6urq6urq7u7u7u7u7u7u9vb26urq6urq7u7u6urq6urq6urq6urq7u7u8vLy7u7u6urq7u7u6urq7u7u9vb26uro15wGBAAAAJnRSTlMA7QX4rH0WEGz72VQ38+fRlYxpRz4yB8axc52bh3lhWxzhoU4pH65UEgAAAAEaSURBVEjH7ZXLGoIgEIUBJbyVqZl2v/P+jxhjLFSEYr6WnuWBH4YZGMisP2vD24TGAc3DXf0b8SpWsqfkJL4ii3UsR1ryrZtJqZxQkrmYo+xE7+dasO0ii8KgM4KzndlL0K3shSP4Z++djSlgNOZs6IpDR1n2SmFstTEHLkuIsJ7MG8RBn1NDFZwsZ8TUGpazpOkilSLTvwau4+4hcnMrDvVg1prDsVLDzpVb9g0z+NBYCrIt7FAGWTISpMyGOAS5vY68UnkHF9SoCeManpR3dEGtmvBAQajwUInApBxVXNQ1Ql1YzNNAPULMc0c0lob5tjBQyDybpab82nKhKb8PINKU11djo9yfmqY48ZGmWoKgUuKrqqjIrIHeA6M7aFBCwYoAAAAASUVORK5CYII=\");background-size:.6667rem;background-repeat:no-repeat;background-position:50%;vertical-align:top}.contactsBox_search{position:relative;padding:.2667rem}.contactsBox_searchIcon{position:absolute;left:.4rem;top:.3733rem}.contactsBox_searchInput{display:block;width:100%;box-sizing:border-box!important;line-height:.4rem;padding:.2667rem .2667rem .2667rem .9333rem;font-size:14px;border:none;outline:none;background:#f2f2f2;border-radius:4px;-webkit-transition:box-shadow .4s ease;transition:box-shadow .4s ease}.contactsBox_searchInput::-webkit-input-placeholder{color:#bababa}.contactsBox_searchInput::placeholder{color:#bababa}.contactsBox_searchInput:focus{box-shadow:0 0 .08rem 0 rgba(0,0,0,.3)}.contactsBox_content{position:relative;height:100%}.hasSearchInput .contactsBox_content{height:auto}.contactsBox_listBox{overflow:auto;padding:0;-webkit-overflow-scrolling:touch}.contactsBox_groupTitle{margin:0;position:-webkit-sticky;position:sticky;top:0;padding:0 .2667rem;font-size:14px;font-weight:700;color:#000;line-height:1.0667rem;background:#e5e5e5}.contactsBox_groupItem{padding:0 .8rem 0 .2667rem}.contactsBox_groupItem:active{background-color:#efefef}.contactsBox_groupItem.xx-active .contactsBox_groupLabel{color:#ff8a00}.contactsBox_groupItem .contactsBox_groupLabel{display:block;font-size:14px;color:#000;line-height:1.28rem;border-bottom:.5px solid #eee}.contactsBox_keyBar{box-sizing:border-box!important;position:absolute;padding:.2667rem .0533rem .2667rem 0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);right:0;color:#007aff;max-height:100%}.contactsBox_keyBar>span{display:block;text-align:center;width:.48rem;line-height:.48rem;border-radius:50%;font-size:.32rem}.contactsBox_keyBar>span.xx-active{background:#007aff;color:#fff}.contactsBox_keyBar.contactsBox_keyBar-scroll{overflow:auto;-webkit-overflow-scrolling:touch}.contactsBox_keyBar.contactsBox_keyBar-touchmove>span{width:1.8vh;line-height:1.8vh;padding:.0533rem}.contactsBox_indicator{position:absolute;width:1.1733rem;height:1.1733rem;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);text-align:center;line-height:1.1733rem;background-color:#666;border-radius:.2133rem;color:#fff;font-size:17px}";
+  var css_248z = ".xx-disHide{display:none!important}.contactsBox{position:relative;background:#fff}.contactsBox .c-search-icon{display:inline-block;width:.6667rem;height:.6667rem;background-image:url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAwCAMAAABpN6nPAAAAdVBMVEUAAAC6urqsrKy6urq7u7u7u7u6urq7u7u7u7u6urq6urq8vLy8vLy6urq6urq7u7u7u7u6urq6urq7u7u7u7u7u7u9vb26urq6urq7u7u6urq6urq6urq6urq7u7u8vLy7u7u6urq7u7u6urq7u7u9vb26uro15wGBAAAAJnRSTlMA7QX4rH0WEGz72VQ38+fRlYxpRz4yB8axc52bh3lhWxzhoU4pH65UEgAAAAEaSURBVEjH7ZXLGoIgEIUBJbyVqZl2v/P+jxhjLFSEYr6WnuWBH4YZGMisP2vD24TGAc3DXf0b8SpWsqfkJL4ii3UsR1ryrZtJqZxQkrmYo+xE7+dasO0ii8KgM4KzndlL0K3shSP4Z++djSlgNOZs6IpDR1n2SmFstTEHLkuIsJ7MG8RBn1NDFZwsZ8TUGpazpOkilSLTvwau4+4hcnMrDvVg1prDsVLDzpVb9g0z+NBYCrIt7FAGWTISpMyGOAS5vY68UnkHF9SoCeManpR3dEGtmvBAQajwUInApBxVXNQ1Ql1YzNNAPULMc0c0lob5tjBQyDybpab82nKhKb8PINKU11djo9yfmqY48ZGmWoKgUuKrqqjIrIHeA6M7aFBCwYoAAAAASUVORK5CYII=\");background-size:.6667rem;background-repeat:no-repeat;background-position:50%;vertical-align:top}.contactsBox_search{position:relative;padding:.2667rem}.contactsBox_searchIcon{position:absolute;left:.4rem;top:.3733rem}.contactsBox_searchInput{display:block;width:100%;box-sizing:border-box!important;line-height:.4rem;padding:.2667rem .2667rem .2667rem .9333rem;font-size:14px;border:none;outline:none;background:#f2f2f2;border-radius:4px;-webkit-transition:box-shadow .4s ease;transition:box-shadow .4s ease}.contactsBox_searchInput::-webkit-input-placeholder{color:#bababa}.contactsBox_searchInput::placeholder{color:#bababa}.contactsBox_searchInput:focus{box-shadow:0 0 .08rem 0 rgba(0,0,0,.3)}.contactsBox_content{position:relative;height:100%}.hasSearchInput .contactsBox_content{height:auto}.contactsBox_listBox{overflow:auto;padding:0;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}.contactsBox_groupTitle{margin:0;position:-webkit-sticky;position:sticky;top:0;padding:0 .2667rem;font-size:14px;font-weight:700;color:#000;line-height:1.0667rem;background:#e5e5e5}.contactsBox_groupItem{padding:0 .8rem 0 .2667rem}.contactsBox_groupItem:active{background-color:#efefef}.contactsBox_groupItem.xx-active .contactsBox_groupLabel{color:#ff8a00}.contactsBox_groupItem .contactsBox_groupLabel{display:block;font-size:14px;color:#000;line-height:1.28rem;border-bottom:.5px solid #eee}.contactsBox_keyBar{box-sizing:border-box!important;position:absolute;padding:.2667rem .0533rem .2667rem 0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);right:0;color:#007aff;max-height:100%}.contactsBox_keyBar>span{display:block;text-align:center;width:.48rem;line-height:.48rem;border-radius:50%;font-size:.32rem}.contactsBox_keyBar>span.xx-active{background:#007aff;color:#fff}.contactsBox_keyBar.contactsBox_keyBar-scroll{overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}.contactsBox_keyBar.contactsBox_keyBar-touchmove>span{width:1.8vh;line-height:1.8vh;padding:.0533rem}.contactsBox_indicator{position:absolute;width:1.1733rem;height:1.1733rem;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);text-align:center;line-height:1.1733rem;background-color:#666;border-radius:.2133rem;color:#fff;font-size:17px}";
   styleInject(css_248z);
 
   /**
@@ -275,6 +275,26 @@
 
       return result;
     };
+  }
+  function handleEvents(events) {
+    var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'addEventListener';
+    // 注册事件
+    events.forEach(function () {
+      var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          target = _ref.target,
+          eventName = _ref.eventName,
+          handler = _ref.handler,
+          _ref$useCapture = _ref.useCapture,
+          useCapture = _ref$useCapture === void 0 ? false : _ref$useCapture;
+
+      if (Array.isArray(eventName)) {
+        eventName.forEach(function (eName) {
+          target[type](eName, handler, useCapture);
+        });
+      } else {
+        target[type](eventName, handler, useCapture);
+      }
+    });
   }
 
   /**
@@ -704,22 +724,7 @@
         } // 注册事件
 
 
-        this.events.forEach(function () {
-          var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-              target = _ref.target,
-              eventName = _ref.eventName,
-              handler = _ref.handler,
-              _ref$useCapture = _ref.useCapture,
-              useCapture = _ref$useCapture === void 0 ? false : _ref$useCapture;
-
-          if (Array.isArray(eventName)) {
-            eventName.forEach(function (eName) {
-              target.addEventListener(eName, handler, useCapture);
-            });
-          } else {
-            target.addEventListener(eventName, handler, useCapture);
-          }
-        });
+        handleEvents(this.events);
       } // 销毁
 
     }, {
@@ -729,22 +734,7 @@
 
         clearTimeout(this.$$indicatorTimer); // 释放事件
 
-        this.events.forEach(function () {
-          var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-              target = _ref2.target,
-              eventName = _ref2.eventName,
-              handler = _ref2.handler,
-              _ref2$useCapture = _ref2.useCapture,
-              useCapture = _ref2$useCapture === void 0 ? false : _ref2$useCapture;
-
-          if (Array.isArray(eventName)) {
-            eventName.forEach(function (eName) {
-              target.removeEventListener(eName, handler, useCapture);
-            });
-          } else {
-            target.removeEventListener(eventName, handler, useCapture);
-          }
-        }); // 还原dom节点
+        handleEvents(this.events, 'removeEventListener'); // 还原dom节点
 
         if (this.options.selectDom) this.options.selectDom.classList.remove(hideClass);
         this.options.targetDom.removeChild(this.options.targetDom.firstElementChild); // 释放dom等引用

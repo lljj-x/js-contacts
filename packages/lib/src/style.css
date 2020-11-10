@@ -57,6 +57,7 @@
 .contactsBox_listBox {
     overflow: auto;
     padding: 0;
+    overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
 }
 .contactsBox_groupTitle {
@@ -113,6 +114,7 @@
     }
     &.contactsBox_keyBar-scroll {
         overflow: auto;
+        overscroll-behavior: contain;
         -webkit-overflow-scrolling: touch;
     }
 

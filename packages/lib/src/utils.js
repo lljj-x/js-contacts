@@ -124,3 +124,18 @@ export function throttle(func, wait, ops) {
         return result;
     };
 }
+
+export function handleEvents(events, type = 'addEventListener') {
+    // 注册事件
+    events.forEach(({
+        target, eventName, handler, useCapture = false
+    } = {}) => {
+        if (Array.isArray(eventName)) {
+            eventName.forEach((eName) => {
+                target[type](eName, handler, useCapture);
+            });
+        } else {
+            target[type](eventName, handler, useCapture);
+        }
+    });
+}

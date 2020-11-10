@@ -4,7 +4,7 @@
 
 import './style.css';
 import {
-    genId, getRealCurrentTarget, groupByLetter, querySelectorList, throttle
+    genId, getRealCurrentTarget, groupByLetter, querySelectorList, throttle, handleEvents
 } from './utils';
 import genTemplateHtml, { groupItemsHtml, navItemsHtml } from './template';
 
@@ -353,17 +353,7 @@ export default class Contacts {
         }
 
         // 注册事件
-        this.events.forEach(({
-            target, eventName, handler, useCapture = false
-        } = {}) => {
-            if (Array.isArray(eventName)) {
-                eventName.forEach((eName) => {
-                    target.addEventListener(eName, handler, useCapture);
-                });
-            } else {
-                target.addEventListener(eventName, handler, useCapture);
-            }
-        });
+        handleEvents(this.events);
     }
 
     // 销毁
@@ -374,17 +364,7 @@ export default class Contacts {
         clearTimeout(this.$$indicatorTimer);
 
         // 释放事件
-        this.events.forEach(({
-            target, eventName, handler, useCapture = false
-        } = {}) => {
-            if (Array.isArray(eventName)) {
-                eventName.forEach((eName) => {
-                    target.removeEventListener(eName, handler, useCapture);
-                });
-            } else {
-                target.removeEventListener(eventName, handler, useCapture);
-            }
-        });
+        handleEvents(this.events, 'removeEventListener');
 
         // 还原dom节点
         if (this.options.selectDom) this.options.selectDom.classList.remove(hideClass);
