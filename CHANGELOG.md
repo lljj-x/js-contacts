@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/lljj-x/js-contacts/compare/v0.1.3...v0.1.4) (2020-11-10)
+
+
+### Bug Fixes
+
+* **lib:** 修复label不支持特殊字符和在容器区域外touchmove无法滑动选择问题 ([90e48ab](https://github.com/lljj-x/js-contacts/commit/90e48ab6e26601e64d094f55b5c9bc8514b67033))
+
+
+
+
+
 ## [0.1.3](https://github.com/lljj-x/js-contacts/compare/v0.1.2...v0.1.3) (2020-11-10)
 
 **Note:** Version bump only for package js-contacts
