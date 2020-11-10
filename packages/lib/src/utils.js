@@ -59,7 +59,7 @@ export function querySelectorList(selector, parent = document) {
 }
 
 // 通过首字母对数据分组 数据分组
-export function groupByLetter(data, id, searchVal) {
+export function groupByLetter(data, searchVal) {
     const tempCache = Object.create(null);
 
     return data.reduce((preVal, curVal) => {
@@ -75,7 +75,7 @@ export function groupByLetter(data, id, searchVal) {
                 name: letter,
                 letter,
                 value: [curVal],
-                anchorPoint: `${id}_${letter}`
+                anchorPoint: genId()
             });
         }
 

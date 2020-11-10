@@ -42,7 +42,7 @@
         color: #BABABA;
     }
     &:focus {
-        box-shadow: 0 0 rem(6) 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 rem(3) 0 rgba(0, 0, 0, 0.1);
     }
 }
 
@@ -101,12 +101,13 @@
     color: #007AFF;
     max-height: 100%;
     &>span {
+        box-sizing: content-box;
         display: block;
-        text-align: center;
         width: rem(36);
         line-height: rem(36);
         border-radius: 50%;
         font-size: rem(24);
+        text-align: center;
         &.xx-active {
             background: #007AFF;
             color: #FFFFFF;

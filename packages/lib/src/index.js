@@ -8,16 +8,15 @@ import {
 } from './utils';
 import genTemplateHtml, { groupItemsHtml, navItemsHtml } from './template';
 
-const hideClass = 'xx-disHide';
+// const hideClass = 'xx-disHide';
 
 export default class Contacts {
     events = []
 
     options = {
-        id: '', // 每个实例对应唯一的id
         target: '', // 需要放置的容器
         hotLetter: '#',
-        hotName: 'Hot',
+        hotName: 'Hot.xxx',
         hotList: [],
         allList: [],
         groupedList: [], // 处理为分组数据
@@ -37,7 +36,6 @@ export default class Contacts {
     }
 
     constructor(options) {
-        this.options.id = genId(); // 初始化id
         this.resolveData(options); // 初始化options
         this.grouping(); // 分组
         this.render(); // 渲染dom 已经绑定事件
@@ -72,13 +70,16 @@ export default class Contacts {
     }
 
     // 根据select标签解析数据
-    resolveSelectNodeData(selector) {
+    resolveSelectNodeData(selector, curSelect) {
         const selectDom = querySelectorList(selector)[0];
-        selectDom.classList.add(hideClass);
+        // selectDom.classList.add(hideClass);
         this.options.selectDom = selectDom;
 
         const hotNode = selectDom.querySelector('[data-type=hot]');
         const dataOptions = Object.create(null);
+
+        if (curSelect === undefined) dataOptions.curSelect = selectDom.value;
+
         if (hotNode) {
             // hotList
             dataOptions.hotList = this.optionNodeList2DataList(hotNode.querySelectorAll('option'));
@@ -98,7 +99,7 @@ export default class Contacts {
         if (!data) this.throwError('构造函数参数必须包含 [data] 属性');
 
         if (data.selectDom) {
-            const dataOptions = this.resolveSelectNodeData(data.selectDom);
+            const dataOptions = this.resolveSelectNodeData(data.selectDom, args.curSelect);
             Object.assign(this.options, args, dataOptions);
         } else {
             if (!data.allList) {
@@ -118,9 +119,9 @@ export default class Contacts {
                 name: this.options.hotName,
                 letter: this.options.hotLetter,
                 value: this.options.hotList,
-                anchorPoint: `${this.options.id}_${this.options.hotName}`
+                anchorPoint: genId()
             }] : []),
-            ...groupByLetter(this.options.allList, this.options.id, this.options.searchVal)
+            ...groupByLetter(this.options.allList, this.options.searchVal)
         ];
     }
 
@@ -180,8 +181,8 @@ export default class Contacts {
 
         // 计算 touchmoveX
         if (this.options.navModel === 'touchmove') {
-            // 3 是随便加的...
-            this.options.touchmoveX = this.options.navBarDom.offsetLeft + 3;
+            const barClientRect = this.options.navBarDom.getBoundingClientRect();
+            this.options.touchmoveX = barClientRect.left + (barClientRect.width || 6) / 2;
         }
     }
 
@@ -338,11 +339,10 @@ export default class Contacts {
                 });
 
                 this.events.push({
-                    target: this.options.targetDom,
+                    target: document,
                     eventName: 'touchmove',
                     handler: throttle((event) => {
                         if (this.isDestroy || !this.options.shouldObserveTouchMove) return;
-                        event.preventDefault();
                         const target = document.elementFromPoint(this.options.touchmoveX, event.changedTouches[0].clientY);
                         if (target && target.classList && target.classList.contains('js_keyBarItem')) {
                             this.handleAnchorPoint(target);
@@ -367,7 +367,7 @@ export default class Contacts {
         handleEvents(this.events, 'removeEventListener');
 
         // 还原dom节点
-        if (this.options.selectDom) this.options.selectDom.classList.remove(hideClass);
+        // if (this.options.selectDom) this.options.selectDom.classList.remove(hideClass);
         this.options.targetDom.removeChild(this.options.targetDom.firstElementChild);
 
         // 释放dom等引用
