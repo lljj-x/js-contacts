@@ -22,7 +22,7 @@ const onwarn = (warning) => {
     // Silence circular dependency warning for moment package
     if (
         warning.code === 'CIRCULAR_DEPENDENCY'
-        && !warning.importer.indexOf(path.normalize('src/JsonSchemaForm/'))
+        && !warning.importer.indexOf(path.normalize('src/'))
     ) {
         return;
     }
