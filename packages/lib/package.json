@@ -18,8 +18,8 @@
         "dist/*.js",
         "types/*.d.ts"
     ],
-    "repository": "https://github.com/lljj-x/polyfill",
-    "homepage": "https://github.com/lljj-x/polyfill",
+    "repository": "https://github.com/lljj-x/js-contacts",
+    "homepage": "https://github.com/lljj-x/js-contacts",
     "license": "MIT",
     "publishConfig": {
         "access": "public"
