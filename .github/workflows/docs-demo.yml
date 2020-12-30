@@ -23,7 +23,7 @@ jobs:
                   yarn run demo:build
             - name: Setup aliyun oss
                 # 设置阿里云OSS配置
-              uses: manyuanrong/setup-ossutil@v1.0
+              uses: manyuanrong/setup-ossutil@v2.0
               with:
                   endpoint: "oss-cn-hongkong.aliyuncs.com"
                   access-key-id: ${{ secrets.OSS_ACCESSKEYID }}
