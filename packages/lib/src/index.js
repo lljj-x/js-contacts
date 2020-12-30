@@ -42,9 +42,9 @@ export default class Contacts {
         this.updatePosition(); // 计算每个session position
     }
 
-    callHook(name, payload) {
+    callHook(name, ...args) {
         if (this.options[name]) {
-            this.options[name].call(null, payload);
+            this.options[name].apply(null, args);
         }
     }
 
@@ -232,7 +232,7 @@ export default class Contacts {
         selectList.forEach(item => item.classList.add(this.options.activeClassName));
 
         this.options.curSelect = curSelect;
-        this.callHook('onSelect', curSelect);
+        this.callHook('onSelect', curSelect, target);
     }
 
     // 滚动条滚动事件

@@ -375,9 +375,13 @@ var Contacts = /*#__PURE__*/function () {
 
   _createClass(Contacts, [{
     key: "callHook",
-    value: function callHook(name, payload) {
+    value: function callHook(name) {
       if (this.options[name]) {
-        this.options[name].call(null, payload);
+        for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+          args[_key - 1] = arguments[_key];
+        }
+
+        this.options[name].apply(null, args);
       }
     }
   }, {
@@ -582,7 +586,7 @@ var Contacts = /*#__PURE__*/function () {
         return item.classList.add(_this4.options.activeClassName);
       });
       this.options.curSelect = curSelect;
-      this.callHook('onSelect', curSelect);
+      this.callHook('onSelect', curSelect, target);
     } // 滚动条滚动事件
 
   }, {
