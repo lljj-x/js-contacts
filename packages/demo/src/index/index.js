@@ -2,7 +2,7 @@
  * Created by Liu.Jun on 2020/11/5 11:48.
  */
 
-import Contacts from 'js-contacts/src/index';
+import Contacts from 'js-contacts';
 
 import './lib/layer_mobile/layer';
 import './lib/layer_mobile/need/layer.css';
