@@ -55,7 +55,7 @@ export default class Contacts {
 
     // 转换Option NodeList 到 dataList
     optionNodeList2DataList(optionNodeList) {
-        return [...optionNodeList].reduce((previousValue, curVal) => {
+        return Array.from(optionNodeList).reduce((previousValue, curVal) => {
             if (curVal.value !== '') {
                 const label = curVal.innerText || curVal.textContent || curVal.text;
                 const groupKey = curVal.dataset.groupKey || label;

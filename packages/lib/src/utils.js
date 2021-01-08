@@ -44,7 +44,7 @@ export function getRealCurrentTarget(currentTarget, target, validFn) {
 // 返回普通数组
 export function querySelectorList(selector, parent = document) {
     if (selector instanceof NodeList) {
-        return [...selector];
+        return Array.from(selector);
     }
 
     if (selector instanceof HTMLElement) {
@@ -52,7 +52,7 @@ export function querySelectorList(selector, parent = document) {
     }
 
     if (isString(selector)) {
-        return [...parent.querySelectorAll(selector)];
+        return Array.from(parent.querySelectorAll(selector));
     }
 
     throw new Error('请传入一个正确的选择器');

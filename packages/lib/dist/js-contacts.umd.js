@@ -1,4 +1,4 @@
-/** @license js-contacts (c) 2020-2020 Liu.Jun License: MIT */
+/** @license js-contacts (c) 2020-2021 Liu.Jun License: MIT */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -189,7 +189,7 @@
     var parent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
 
     if (selector instanceof NodeList) {
-      return _toConsumableArray(selector);
+      return Array.from(selector);
     }
 
     if (selector instanceof HTMLElement) {
@@ -197,7 +197,7 @@
     }
 
     if (isString(selector)) {
-      return _toConsumableArray(parent.querySelectorAll(selector));
+      return Array.from(parent.querySelectorAll(selector));
     }
 
     throw new Error('请传入一个正确的选择器');
@@ -400,7 +400,7 @@
     }, {
       key: "optionNodeList2DataList",
       value: function optionNodeList2DataList(optionNodeList) {
-        return _toConsumableArray(optionNodeList).reduce(function (previousValue, curVal) {
+        return Array.from(optionNodeList).reduce(function (previousValue, curVal) {
           if (curVal.value !== '') {
             var label = curVal.innerText || curVal.textContent || curVal.text;
             var groupKey = curVal.dataset.groupKey || label;

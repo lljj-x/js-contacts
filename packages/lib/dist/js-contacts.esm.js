@@ -1,4 +1,4 @@
-/** @license js-contacts (c) 2020-2020 Liu.Jun License: MIT */
+/** @license js-contacts (c) 2020-2021 Liu.Jun License: MIT */
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -183,7 +183,7 @@ function querySelectorList(selector) {
   var parent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
 
   if (selector instanceof NodeList) {
-    return _toConsumableArray(selector);
+    return Array.from(selector);
   }
 
   if (selector instanceof HTMLElement) {
@@ -191,7 +191,7 @@ function querySelectorList(selector) {
   }
 
   if (isString(selector)) {
-    return _toConsumableArray(parent.querySelectorAll(selector));
+    return Array.from(parent.querySelectorAll(selector));
   }
 
   throw new Error('请传入一个正确的选择器');
@@ -394,7 +394,7 @@ var Contacts = /*#__PURE__*/function () {
   }, {
     key: "optionNodeList2DataList",
     value: function optionNodeList2DataList(optionNodeList) {
-      return _toConsumableArray(optionNodeList).reduce(function (previousValue, curVal) {
+      return Array.from(optionNodeList).reduce(function (previousValue, curVal) {
         if (curVal.value !== '') {
           var label = curVal.innerText || curVal.textContent || curVal.text;
           var groupKey = curVal.dataset.groupKey || label;
