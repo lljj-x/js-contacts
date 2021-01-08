@@ -1,6 +1,6 @@
 {
     "name": "js-contacts",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "JS 仿通讯录选择效果",
     "main": "dist/js-contacts.umd.min.js",
     "module": "dist/js-contacts.esm.min.js",
