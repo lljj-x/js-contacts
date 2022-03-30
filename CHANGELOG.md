@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/lljj-x/js-contacts/compare/v0.2.2...v0.2.3) (2022-03-30)
+
+
+### Bug Fixes
+
+* **src/index.js:** 修复data value 中带有'符号，导致选择器无效。 ([9b5bf8d](https://github.com/lljj-x/js-contacts/commit/9b5bf8df8a37eb8f5a70685e32b4bed5586d3bec))
+
+
+
+
+
 ## [0.2.2](https://github.com/lljj-x/js-contacts/compare/v0.2.1...v0.2.2) (2021-01-08)
 
 
