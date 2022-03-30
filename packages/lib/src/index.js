@@ -228,7 +228,7 @@ export default class Contacts {
 
         // 选中新的值，可能多选
         const curSelect = target.dataset.value;
-        const selectList = querySelectorList(`.js_contactsBoxGroupItem[data-value='${target.dataset.value}']`, this.options.targetDom);
+        const selectList = querySelectorList(`.js_contactsBoxGroupItem[data-value="${target.dataset.value}"]`, this.options.targetDom);
         selectList.forEach(item => item.classList.add(this.options.activeClassName));
 
         this.options.curSelect = curSelect;
