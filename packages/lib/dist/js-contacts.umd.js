@@ -1,4 +1,4 @@
-/** @license js-contacts (c) 2020-2021 Liu.Jun License: MIT */
+/** @license js-contacts (c) 2020-2022 Liu.Jun License: MIT */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -587,7 +587,7 @@
         }); // 选中新的值，可能多选
 
         var curSelect = target.dataset.value;
-        var selectList = querySelectorList(".js_contactsBoxGroupItem[data-value='".concat(target.dataset.value, "']"), this.options.targetDom);
+        var selectList = querySelectorList(".js_contactsBoxGroupItem[data-value=\"".concat(target.dataset.value, "\"]"), this.options.targetDom);
         selectList.forEach(function (item) {
           return item.classList.add(_this4.options.activeClassName);
         });
